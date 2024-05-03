@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">ACME Car Rental</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -31,28 +31,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li> -->
                     </ul>
-                    <!-- <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
                 </div>
             </div>
         </nav>
@@ -63,69 +42,92 @@
     <main>
         <div class="container">
             <div class="row">
+                <!--This feels like such a stupid way to do this man-->
                 <div class="col">
-                    <h1>ACME Car Rental</h1>
-                    <!--Add Bottom Margin Here-->
-                </div>
-            </div>
-
-            <!--Input block-->
-            <div class="row">
-                <div class="col">
-                    <p>Pickup Date: <input id="pickupDateBox" type="date" /></p>
-                    <p>Number of Days: <input id="numberOfDaysTextBox" type="text" /> </p>
-                </div>
-            </div>
-
-            <!--Options block-->
-            <div class="row">
-                <div class="col">
-                    <p>Options</p>
-                    <input id="electronicTollTagCheckbox" type="checkbox">
-                    <label> Electronic Toll Tag ($3.95/day)</label>
-                    <br> <!--May do something about these-->
-                    <input id="gpsCheckbox" type="checkbox">
-                    <label> GPS ($2.95/day)</label>
-                    <br>
-                    <input id="roadsideAssistanceCheckbox" type="checkbox">
-                    <label> Roadside Assistance ($2.95/day)</label>
-                    <br> <br>
-                </div>
-            </div>
-
-            <!--Under 25 Block-->
-            <div class="row">
-                <div class="col">
-                    <!--Too much of a bottom margin here-->
-                    <p>Under 25</p>
-                    <input id="under25NoRadioButton" type="radio" name = "under25">
-                    <label>No</label>
-                    <!--Add some margin here-->
-                    <input id="under25YesRadioButton" type="radio" name = "under25">
-                    <label>Yes</label>
-                    <br>
-                    <input id="estimateTotalCostButton" type="button" value="Estimate Total Cost" />
 
                 </div>
-            </div>
+                <div class="col-5">
+                    <div class="container border border-primary">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <h1>ACME Car Rental</h1>
+                                <!--Add Bottom Margin Here-->
+                            </div>
+                        </div>
 
-            <!--The output-->
-            <div class="row">
+                        <!--Input block-->
+                        <div class="row">
+                            <div class="col">
+                                <p>Pickup Date: <input id="pickupDateBox" type="date" /></p>
+                                <p>Number of Days: <input id="numberOfDaysTextBox" type="text" /> </p>
+                            </div>
+                        </div>
+
+                        <!--Options block-->
+                        <div class="row">
+                            <div class="col">
+                                <p>Options</p>
+                                <input id="electronicTollTagCheckbox" type="checkbox">
+                                <label> Electronic Toll Tag ($3.95/day)</label>
+                                <br> <!--May do something about these-->
+                                <input id="gpsCheckbox" type="checkbox">
+                                <label> GPS ($2.95/day)</label>
+                                <br>
+                                <input id="roadsideAssistanceCheckbox" type="checkbox">
+                                <label> Roadside Assistance ($2.95/day)</label>
+                                <br> <br>
+                            </div>
+                        </div>
+
+                        <!--Under 25 Block-->
+                        <div class="row">
+                            <div class="col">
+                                <!--Too much of a bottom margin here-->
+                                <p class = "mb-3">Under 25</p>
+                                <input id="under25NoRadioButton" type="radio" name="under25" checked>
+                                <label>No</label>
+                                <!--Add some margin here-->
+                                <input id="under25YesRadioButton" type="radio" name="under25">
+                                <label>Yes</label>
+                                <br>
+                                <input id="estimateTotalCostButton" class = "my-3"type="button" value="Estimate Total Cost" />
+
+                            </div>
+                        </div>
+
+                        <!--The output-->
+                        <div class="row">
+                            <div class = "col text-end">
+                                <ul>
+                                    <li>Car Rental: </li>
+                                    <li>Options: </li>
+                                    <li>Under 25 surcharge:</li>
+                                    <br>
+                                    <li>Total Due:</li>
+                                </ul>
+
+                            </div>
+
+                            <div class = "col-8 text-start">
+                                <ul>
+                                    <li><span id="carRentalCostSpan">xxx.xx</span></li>
+                                    <li><span id="optionsCostSpan">xx.xx</span></li>
+                                    <li><span id="under25SurchargeCostSpan">xx.xx</span></li>
+                                    <br>
+                                    <li><span id="totalDueSpan">xx.xx</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--This feels like such a stupid way to do this man-->
                 <div class="col">
-                    <ul>
-                        <li>Car Rental: <span id = "carRentalCostSpan">xxx.xx</span></li>
-                        <li>Options: <span id = "optionsCostSpan">xx.xx</span></li>
-                        <li>Under 25 surcharge: <span id = "under25SurchargeCostSpan">xx.xx</span></li>
-                        <br>
-                        <li>Total Due: <span id = "totalDueSpan">xx.xx</span></li>
-                    </ul>
 
                 </div>
-
             </div>
-
         </div>
-
     </main>
 
 
