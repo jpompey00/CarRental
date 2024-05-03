@@ -2,12 +2,15 @@
 
 //textbox elements
 const numberOfDaysTextBox = document.getElementById("numberOfDaysTextBox");
+
 //Datebox element - not used as of now.
 const pickupDateBox = document.getElementById("pickupDateBox");
+
 //checkbox elements
 const electronicTollTagCheckbox = document.getElementById("electronicTollTagCheckbox");
 const gpsCheckbox = document.getElementById("gpsCheckbox");
 const roadsideAssistanceCheckbox = document.getElementById("roadsideAssistanceCheckbox");
+
 //radio buttons elements
 const under25NoRadioButton = document.getElementById("under25NoRadioButton");
 const under25YesRadioButton = document.getElementById("under25YesRadioButton");
@@ -46,10 +49,12 @@ function onEstimateTotalCostButtonClicked(){
     let total = 0;
     let options = 0;
     let totalOptionsCost = 0;
+
     //constant
     const CAR_RENTAL_RATE = 29.99;
 
 
+    //Checks each checkbox to see what needs to be added to options
     if(electronicTollTagCheck){
         options += 3.95;
     }
@@ -60,8 +65,10 @@ function onEstimateTotalCostButtonClicked(){
         options += 2.95;
     }
 
+    //calculates the rental cost and options costs independatnlyfor the surcharge if applicable
     baseRentalCost = CAR_RENTAL_RATE * numOfDays;
     totalOptionsCost = options * numOfDays;
+
     if(under25YesButton){
 
         surcharge = (baseRentalCost + totalOptionsCost) * .3; 
@@ -69,6 +76,7 @@ function onEstimateTotalCostButtonClicked(){
 
     total =  baseRentalCost + totalOptionsCost +  surcharge;
 
+    //outputs the results to the document
     carRentalCostSpan.innerHTML = baseRentalCost.toFixed(2);
     optionsCostSpan.innerHTML = totalOptionsCost.toFixed(2);
     under25SurchargeCostSpan.innerHTML = surcharge.toFixed(2);
