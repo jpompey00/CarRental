@@ -72,8 +72,8 @@
             <!--Input block-->
             <div class="row">
                 <div class="col">
-                    <p>Pickup Date: <input id="" type="text" /></p>
-                    <p>Number of Days: <input id="" type="text" /> </p>
+                    <p>Pickup Date: <input id="pickupDateTextBox" type="text" /></p>
+                    <p>Number of Days: <input id="numberOfDaysTextBox" type="text" /> </p>
                 </div>
             </div>
 
@@ -81,13 +81,13 @@
             <div class="row">
                 <div class="col">
                     <p>Options</p>
-                    <input id="" type="checkbox">
+                    <input id="electronicTollTagCheckbox" type="checkbox">
                     <label> Electronic Toll Tag ($3.95/day)</label>
-                    <br>
-                    <input id="" type="checkbox">
+                    <br> <!--May do something about these-->
+                    <input id="gpsCheckbox" type="checkbox">
                     <label> GPS ($2.95/day)</label>
                     <br>
-                    <input id="" type="checkbox">
+                    <input id="roadsideAssistanceCheckbox" type="checkbox">
                     <label> Roadside Assistance ($2.95/day)</label>
                     <br> <br>
                 </div>
@@ -98,13 +98,13 @@
                 <div class="col">
                     <!--Too much of a bottom margin here-->
                     <p>Under 25</p>
-                    <input id="" type="radio">
+                    <input id="under25NoRadioButton" type="radio" name = "under25">
                     <label>No</label>
                     <!--Add some margin here-->
-                    <input id="" type="radio">
+                    <input id="under25YesRadioButton" type="radio" name = "under25">
                     <label>Yes</label>
                     <br>
-                    <input id="" type="button" value="Estimate Total Cost" />
+                    <input id="estimateTotalCostButton" type="button" value="Estimate Total Cost" />
 
                 </div>
             </div>
@@ -113,11 +113,11 @@
             <div class="row">
                 <div class="col">
                     <ul>
-                        <li>Car Rental: <span>xxx.xx</span></li>
-                        <li>Options: <span>xx.xx</span></li>
-                        <li>Under 25 surcharge: <span>xx.xx</span></li>
+                        <li>Car Rental: <span id = "carRentalCostSpan">xxx.xx</span></li>
+                        <li>Options: <span id = "optionsCostSpan">xx.xx</span></li>
+                        <li>Under 25 surcharge: <span id = "under25SurchargeCostSpan">xx.xx</span></li>
                         <br>
-                        <li>Total Due: <span>xx.xx</span></li>
+                        <li>Total Due: <span id = "totalDueSpan">xx.xx</span></li>
                     </ul>
 
                 </div>
